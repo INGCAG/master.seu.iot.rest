@@ -44,7 +44,7 @@ p2.bindPopup("<strong style='color: #84b819'>RP Data</strong><br>Rheinsiche Post
 $(document).ready(function() {
       $.ajax({
           type: "GET",
-          url: "https://github.com/INGCAG/master.seu.iot.rest/blob/master/src/main/resources/static/json/ddj.json",
+          url: "json/ddj.json",
           dataType: "json",
 		  crossDomain: true,
           mimeType: "application/json",
