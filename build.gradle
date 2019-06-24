@@ -1,0 +1,51 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.6.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.1.6.RELEASE'
+    id 'idea'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+
+}
+
+bootJar {
+    baseName = 'seu.iot.rest'
+    version =  '0.1.0'
+}
+
+group 'MASTER-SEU-Final'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    boostrapVersion = '4.0.0'
+    fontawesomeVersion = '5.0.6'
+    mustacheVersion = '2.3.0'
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-devtools')
+    compile("org.webjars:bootstrap:${boostrapVersion}")
+    compile("org.webjars:font-awesome:${fontawesomeVersion}")
+    compile("org.webjars.bower:mustache:${mustacheVersion}")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
