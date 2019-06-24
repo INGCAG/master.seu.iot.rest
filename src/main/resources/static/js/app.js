@@ -50,7 +50,7 @@ $(document).ready(function() {
           mimeType: "application/json",
 		  beforeSend : setHeader,
           success: function(data) {processData(data);},
-		  error: function() { alert('Failed!'); }
+		  error: function() { alert('Failed!!'); }
 
 	  });
   });
