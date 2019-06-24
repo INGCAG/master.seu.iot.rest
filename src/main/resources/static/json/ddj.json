@@ -1,5 +1,14 @@
 [
   {
+    "long":-0.887887,
+    "lat": 41.684736,
+    "newsroom": "Ada Byron",
+    "company": "EINA",
+    "city": "Zaragoza",
+    "head": "Cesar",
+    "icon": "icons/Unizar.png"
+  },
+  {
     "long": 53.545762,
     "lat": 10.004017,
     "newsroom": "Datenlese",
