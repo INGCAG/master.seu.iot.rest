@@ -62,9 +62,9 @@ function myFunction() {
         });
     });
 
-    function setHeader(xhr) {
-        xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-    }
+    // function setHeader(xhr) {
+    //     xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+    // }
 
     /*$.ajax({
 
