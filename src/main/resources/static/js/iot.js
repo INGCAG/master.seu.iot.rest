@@ -41,7 +41,8 @@ function myFunction() {
     $(document).ready(function () {
         $.ajax({
             type: "GET",
-            url: "json/iot.json",
+            //url: "json/iot.json",
+            url: "https://master-seu-iot-rest-api.herokuapp.com/metric/lst",
             dataType: "json",
             crossDomain: true,
             mimeType: "application/json",
@@ -117,7 +118,7 @@ function myFunction() {
 
                 .bindPopup("<strong style='color: #84b819'>" + data.user + "</strong>" +
                     "<br>Dispositivo: " + data.device + " | Temperatura: " + data.temperature + "" +
-                    "<br>Humedad: " + data.humidity + " | Hora: " + data.time+ "" +
+                    "<br>Humedad: " + data.humidity + " | Hora: " + data.dateTime + "" +
                     "<br>Viento: " + data.windSpeed)
 
 // close the loop, the function processData(allText) and myFunction()
