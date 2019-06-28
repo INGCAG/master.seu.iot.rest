@@ -3,6 +3,7 @@ function myFunction() {
     //var map = L.map('map').setView([52.201675, 10.507759], 7);
     var map = L.map('map').setView([41.657398, -0.878513], 7);
 
+
 // add tile layer 
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
         attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
