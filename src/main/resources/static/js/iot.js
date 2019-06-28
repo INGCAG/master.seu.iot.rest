@@ -36,6 +36,7 @@ function myFunction() {
 // the .openPopup() opens this popup when the page is loaded
     p2.bindPopup("<strong style='color: #84b819'>RP Data</strong><br>Rheinsiche Post | Düsseldorf<br>Head: Phil Ninh").openPopup();
 */
+
 //var popup = L.popup();
 // load json-file  
     $(document).ready(function () {
