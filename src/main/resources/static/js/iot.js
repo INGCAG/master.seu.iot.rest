@@ -42,16 +42,13 @@ function myFunction() {
     $(document).ready(function () {
         $.ajax({
             type: "GET",
-            // beforeSend: function(request){
-            //     request.setRequestHeader("Access-Control-Allow-Origin","https://cors-anywhere.herokuapp.com/")
-            // },
             url: "json/iot.json",
             //proxyurl: "https://cors-anywhere.herokuapp.com/",
             //url: "https://master-seu-iot-rest-api.herokuapp.com/metric/lst",
             dataType: "json",
             crossDomain: true,
             mimeType: "application/json",
-            //beforeSend: setHeader,
+            beforeSend: setHeader,
             success: function (data) {
                 processData(data);
             },
@@ -62,9 +59,11 @@ function myFunction() {
         });
     });
 
-    // function setHeader(xhr) {
-    //     xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-    // }
+    function setHeader(xhr) {
+        xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+        // xhr.setRequestHeader("acept","application/json");
+        // xhr.setRequestHeader("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+    }
 
     /*$.ajax({
 
