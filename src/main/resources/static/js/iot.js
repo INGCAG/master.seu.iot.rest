@@ -121,7 +121,7 @@ function myFunction() {
             L.marker([data.longitude, data.latitude], {icon: customicon})
                 .addTo(map)
 
-                .bindPopup("<strong style='color: #84b819'>" + data.user + "</strong>" +
+                .bindPopup("<strong style='color: #84b819'>" + data.userId + "</strong>" +
                     "<br>Dispositivo: " + data.deviceId + " | Temperatura: " + data.temperature + "" +
                     "<br>Humedad: " + data.humidity + " | Hora: " + data.dateTime + "" +
                     "<br>Viento: " + data.windSpeed)
