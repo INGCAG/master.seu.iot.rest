@@ -10,7 +10,7 @@
     "userId": 3,
     "deviceId": 2,
     "icon": "icons/Unizar.png"
-  }
+  },
   {
     "metricId": 2,
     "latitude": "-0.890456",
@@ -22,7 +22,7 @@
     "userId": 2,
     "deviceId": 1,
     "icon": "icons/User2.png"
-  }
+  },
   {
     "metricId": 3,
     "latitude": "-0.887350",
@@ -34,7 +34,7 @@
     "userId": 1,
     "deviceId": 1,
     "icon": "icons/User1.png"
-  }
+  },
   {
     "metricId": 4,
     "latitude": "-0.870778",
@@ -46,7 +46,7 @@
     "userId": 2,
     "deviceId": 1,
     "icon": "icons/User2.png"
-  }
+  },
   {
     "metricId": 5,
     "latitude": "-0.878710",
@@ -58,7 +58,7 @@
     "userId": 1,
     "deviceId": 1,
     "icon": "icons/User1.png"
-  }
+  },
   {
     "metricId": 6,
     "latitude": "-0.930491",

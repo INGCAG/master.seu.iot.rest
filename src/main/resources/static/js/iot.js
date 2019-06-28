@@ -4,7 +4,7 @@ function myFunction() {
     var map = L.map('map').setView([41.657398, -0.878513], 7);
 
 // add tile layer 
-    L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
         attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
         maxZoom: 16
     }).addTo(map);
@@ -88,7 +88,7 @@ function myFunction() {
                 iconAnchor: [26, 60], // point of the icon which will correspond to marker's location
                 popupAnchor: [0, -60] // point of the icon where the popup window will open
             });
-            if (data.user === "Unizar") {
+            if (data.userId === "3") {
                 customicon = L.icon({
                     iconUrl: data.icon,
                     iconSize: [60, 52],
@@ -97,7 +97,7 @@ function myFunction() {
                 });
             }
             ;
-            if (data.user === "User1") {
+            if (data.userId === "1") {
                 customicon = L.icon({
                     iconUrl: data.icon,
                     iconSize: [60, 52],
@@ -106,7 +106,7 @@ function myFunction() {
                 });
             }
             ;
-            if (data.user === "User2") {
+            if (data.userId === "2") {
                 customicon = L.icon({
                     iconUrl: data.icon,
                     iconSize: [60, 52],
@@ -121,7 +121,7 @@ function myFunction() {
                 .addTo(map)
 
                 .bindPopup("<strong style='color: #84b819'>" + data.user + "</strong>" +
-                    "<br>Dispositivo: " + data.device + " | Temperatura: " + data.temperature + "" +
+                    "<br>Dispositivo: " + data.deviceId + " | Temperatura: " + data.temperature + "" +
                     "<br>Humedad: " + data.humidity + " | Hora: " + data.dateTime + "" +
                     "<br>Viento: " + data.windSpeed)
 
