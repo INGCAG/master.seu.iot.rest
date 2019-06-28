@@ -42,12 +42,12 @@ function myFunction() {
     $(document).ready(function () {
         $.ajax({
             type: "GET",
-            beforeSend: function(request){
-                request.setRequestHeader("Access-Control-Allow-Origin","https://cors-anywhere.herokuapp.com/")
-            },
-            //url: "json/iot.json",
+            // beforeSend: function(request){
+            //     request.setRequestHeader("Access-Control-Allow-Origin","https://cors-anywhere.herokuapp.com/")
+            // },
+            url: "json/iot.json",
             //proxyurl: "https://cors-anywhere.herokuapp.com/",
-            url: "https://master-seu-iot-rest-api.herokuapp.com/metric/lst",
+            //url: "https://master-seu-iot-rest-api.herokuapp.com/metric/lst",
             dataType: "json",
             crossDomain: true,
             mimeType: "application/json",
