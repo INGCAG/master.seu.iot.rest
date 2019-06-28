@@ -51,7 +51,7 @@ function myFunction() {
             dataType: "json",
             crossDomain: true,
             mimeType: "application/json",
-            beforeSend: setHeader,
+            //beforeSend: setHeader,
             success: function (data) {
                 processData(data);
             },
