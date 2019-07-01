@@ -43,8 +43,6 @@ function myFunction() {
     $(document).ready(function () {
         $.ajax({
             type: "GET",
-            //url: "json/iot.json",
-            //proxyurl: "https://cors-anywhere.herokuapp.com/",
             url: "https://master-seu-iot-rest-api.herokuapp.com/metric/lst",
             dataType: "json",
             crossDomain: true,

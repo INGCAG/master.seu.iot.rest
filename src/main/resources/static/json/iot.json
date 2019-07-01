@@ -42,7 +42,7 @@
     "temperature": "29.25",
     "humidity": "0.42",
     "windSpeed": "0.45",
-    "dateTime": "2019-06-28T8:56:21",
+    "dateTime": "2019-06-28T08:56:21",
     "userId": 2,
     "deviceId": 1,
     "icon": "icons/User2.png"
@@ -54,7 +54,7 @@
     "temperature": "30.45",
     "humidity": "0.32",
     "windSpeed": "0.40",
-    "dateTime": "2019-06-28T9:17:35",
+    "dateTime": "2019-06-28T09:17:35",
     "userId": 1,
     "deviceId": 1,
     "icon": "icons/User1.png"
@@ -66,7 +66,7 @@
     "temperature": "30.72",
     "humidity": "0.30",
     "windSpeed": "1.04",
-    "dateTime": "2019-06-28T9:46:03",
+    "dateTime": "2019-06-28T09:46:03",
     "userId": 2,
     "deviceId": 1,
     "icon": "icons/User2.png"
