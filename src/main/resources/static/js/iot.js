@@ -7,7 +7,7 @@ function myFunction() {
 // add tile layer 
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
         attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
-        maxZoom: 18
+        maxZoom: 16
     }).addTo(map);
 
 // add a minimal zoom to prevent users from zooming out too far
