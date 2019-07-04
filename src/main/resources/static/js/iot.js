@@ -117,7 +117,7 @@ function myFunction() {
 
             var sdt = data.dateTime;
             var dt = new Date(sdt);
-            var h = dt.getHours();
+            var h = dt.getHours() + ":" + dt.getMinutes();
             // add the marker to the map
             L.marker([data.latitude, data.longitude], {icon: customicon})
                 .addTo(map)
