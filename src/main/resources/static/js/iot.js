@@ -116,7 +116,7 @@ function myFunction() {
             ;
 
             // add the marker to the map
-            L.marker([data.longitude, data.latitude], {icon: customicon})
+            L.marker([data.latitude, data.longitude], {icon: customicon})
                 .addTo(map)
 
                 .bindPopup("<strong style='color: #84b819'>" + data.userId + "</strong>" +
