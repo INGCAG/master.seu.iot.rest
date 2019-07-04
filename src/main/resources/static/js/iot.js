@@ -1,13 +1,13 @@
 function myFunction() {
     // create variable named map, set viewpoint and default zoom level
     //var map = L.map('map').setView([52.201675, 10.507759], 7);
-    var map = L.map('map').setView([41.657398, -0.878513], 7);
+    var map = L.map('map').setView([41.657398, -0.878513], 13);
 
 
 // add tile layer 
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
         attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
-        maxZoom: 16
+        maxZoom: 20
     }).addTo(map);
 
 // add a minimal zoom to prevent users from zooming out too far
@@ -88,30 +88,45 @@ function myFunction() {
                 popupAnchor: [0, -60] // point of the icon where the popup window will open
             });
             if (data.userId === "3") {
-                customicon = L.icon({
-                    iconUrl: data.icon,
-                    iconSize: [60, 52],
-                    iconAnchor: [60, 26],
-                    popupAnchor: [-35, -26]
-                });
+                // customicon = L.icon({
+                //     iconUrl: data.icon,
+                //     iconSize: [60, 52],
+                //     iconAnchor: [60, 26],
+                //     popupAnchor: [-35, -26]
+                    customicon = L.AwesomeMarkers.icon({
+                        icon: 'bell',
+                        prefix: 'glyphicon',
+                        markerColor: 'red'
+                    }
+                );
             }
             ;
             if (data.userId === "1") {
-                customicon = L.icon({
-                    iconUrl: data.icon,
-                    iconSize: [60, 52],
-                    iconAnchor: [60, 26],
-                    popupAnchor: [-35, -26]
-                });
+                // customicon = L.icon({
+                //     iconUrl: data.icon,
+                //     iconSize: [60, 52],
+                //     iconAnchor: [60, 26],
+                //     popupAnchor: [-35, -26]
+                    customicon = L.AwesomeMarkers.icon({
+                            icon: 'star',
+                            prefix: 'glyphicon',
+                            markerColor: 'blue'
+                    }
+                );
             }
             ;
             if (data.userId === "2") {
-                customicon = L.icon({
-                    iconUrl: data.icon,
-                    iconSize: [60, 52],
-                    iconAnchor: [0, 26],
-                    popupAnchor: [35, -26]
-                });
+                    // customicon = L.icon({
+                    //     iconUrl: data.icon,
+                    //     iconSize: [60, 52],
+                    //     iconAnchor: [0, 26],
+                    //     popupAnchor: [35, -26]
+                    customicon = L.AwesomeMarkers.icon({
+                        icon: 'cloud',
+                        prefix: 'glyphicon',
+                        markerColor: 'green'
+                    }
+                );
             }
             ;
 
@@ -119,13 +134,18 @@ function myFunction() {
             var dt = new Date(sdt);
             var h = dt.getHours() + ":" + dt.getMinutes();
             // add the marker to the map
-            L.marker([data.latitude, data.longitude], {icon: customicon})
-                .addTo(map)
+            L.marker([data.latitude, data.longitude], {icon: customicon}
+            // L.marker([data.latitude, data.longitude], {icon: L.AwesomeMarkers.icon({
+            //         icon: 'bell',
+            //         prefix: 'glyphicon',
+            //         markerColor: 'red'})
+            // }
+            ).addTo(map)
 
                 .bindPopup("<strong style='color: #84b819'> Usuario: " + data.userId + "</strong>" +
                     "<br>Dispositivo: " + data.deviceId + " | Temperatura: " + data.temperature + "" +
-                    "<br>Humedad: " + data.humidity + " | Hora: " + h + "" +
-                    "<br>Viento: " + data.windSpeed)
+                    "<br>Humedad: " + data.humidity + " | Viento: " + data.windSpeed + "" +
+                    "<br>Temperatura Sensor: " + data.sensorTemperature + "Hora: " + h + "")
 
 // close the loop, the function processData(allText) and myFunction()
         }
