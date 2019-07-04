@@ -80,13 +80,18 @@ function myFunction() {
 
         for (var i in allText) {
             data = allText[i];
-            var customicon = L.icon({
-                // the iconUrl is now the ith element in data.icon
-                iconUrl: data.icon,
-                iconSize: [52, 60], // size of the icon
-                iconAnchor: [26, 60], // point of the icon which will correspond to marker's location
-                popupAnchor: [0, -60] // point of the icon where the popup window will open
-            });
+            // var customicon = L.icon({
+            //     // the iconUrl is now the ith element in data.icon
+            //     iconUrl: data.icon,
+            //     iconSize: [52, 60], // size of the icon
+            //     iconAnchor: [26, 60], // point of the icon which will correspond to marker's location
+            //     popupAnchor: [0, -60] // point of the icon where the popup window will open
+            var customicon = L.AwesomeMarkers.icon({
+                    icon: 'bell',
+                    prefix: 'glyphicon',
+                    markerColor: 'red'
+            }
+            );
             if (data.userId === "3") {
                 // customicon = L.icon({
                 //     iconUrl: data.icon,
@@ -145,7 +150,7 @@ function myFunction() {
                 .bindPopup("<strong style='color: #84b819'> Usuario: " + data.userId + "</strong>" +
                     "<br>Dispositivo: " + data.deviceId + " | Temperatura: " + data.temperature + "" +
                     "<br>Humedad: " + data.humidity + " | Viento: " + data.windSpeed + "" +
-                    "<br>Temperatura Sensor: " + data.sensorTemperature + "Hora: " + h + "")
+                    "<br>Temperatura Sensor: " + data.sensorTemperature + " | Hora: " + h + "")
 
 // close the loop, the function processData(allText) and myFunction()
         }
