@@ -150,7 +150,8 @@ function myFunction() {
                 .bindPopup("<strong style='color: #84b819'> Usuario: " + data.userId + "</strong>" +
                     "<br>Dispositivo: " + data.deviceId + " | Temperatura: " + data.temperature + "" +
                     "<br>Humedad: " + data.humidity + " | Viento: " + data.windSpeed + "" +
-                    "<br>Temperatura Sensor: " + data.sensorTemperature + " | Hora: " + h + "")
+                    "<br>Temperatura Sensor: " + data.sensorTemperature + " | Hora: " + h + "" +
+                    "<br>Icono: " + customicon.icon)
 
 // close the loop, the function processData(allText) and myFunction()
         }
