@@ -115,13 +115,16 @@ function myFunction() {
             }
             ;
 
+            var sdt = data.dateTime;
+            var dt = new Date(sdt);
+            var h = dt.getHours();
             // add the marker to the map
             L.marker([data.latitude, data.longitude], {icon: customicon})
                 .addTo(map)
 
-                .bindPopup("<strong style='color: #84b819'>" + data.userId + "</strong>" +
+                .bindPopup("<strong style='color: #84b819'> Usuario: " + data.userId + "</strong>" +
                     "<br>Dispositivo: " + data.deviceId + " | Temperatura: " + data.temperature + "" +
-                    "<br>Humedad: " + data.humidity + " | Hora: " + data.dateTime + "" +
+                    "<br>Humedad: " + data.humidity + " | Hora: " + h + "" +
                     "<br>Viento: " + data.windSpeed)
 
 // close the loop, the function processData(allText) and myFunction()
