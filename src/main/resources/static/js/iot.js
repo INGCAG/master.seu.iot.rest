@@ -92,7 +92,7 @@ function myFunction() {
                     markerColor: 'red'
             }
             );
-            if (data.userId === "3") {
+            if (data.userId === 3) {
                 // customicon = L.icon({
                 //     iconUrl: data.icon,
                 //     iconSize: [60, 52],
@@ -106,7 +106,7 @@ function myFunction() {
                 );
             }
             ;
-            if (data.userId === "1") {
+            if (data.userId === 1) {
                 // customicon = L.icon({
                 //     iconUrl: data.icon,
                 //     iconSize: [60, 52],
@@ -120,7 +120,7 @@ function myFunction() {
                 );
             }
             ;
-            if (data.userId === "2") {
+            if (data.userId === 2) {
                     // customicon = L.icon({
                     //     iconUrl: data.icon,
                     //     iconSize: [60, 52],
