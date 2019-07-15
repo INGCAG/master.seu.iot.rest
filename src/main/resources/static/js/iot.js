@@ -13,31 +13,6 @@ function myFunction() {
 // add a minimal zoom to prevent users from zooming out too far
     map._layersMinZoom = 5;
 
-/*
-    var srf = L.icon({
-        iconUrl: 'icons/SRF.png',// path to the icon
-        iconSize: [60, 52],// size of the icon
-        iconAnchor: [0, 26],// point of the icon which will correspond to marker's location
-        popupAnchor: [35, -26]// point of the icon where the popup window will open
-    });
-
-    var rp = L.icon({
-        iconUrl: 'icons/RPData.png',
-        iconSize: [52, 60],
-        iconAnchor: [26, 60],
-        popupAnchor: [0, -60]
-    });
-
-    var p1 = L.marker([47.417563, 8.560453], {icon: srf}).addTo(map);
-    var p2 = L.marker([51.233059, 6.698716], {icon: rp}).addTo(map);
-
-    // this is basic html! Visit http://www.w3schools.com/tags to learn about html tags!
-    p1.bindPopup("<strong style='color: #84b819'>SRF Data</strong><br>Schweizer Rundfunk und Fernsehen | Zürich<br>Head: Sandra Manca");
-
-// the .openPopup() opens this popup when the page is loaded
-    p2.bindPopup("<strong style='color: #84b819'>RP Data</strong><br>Rheinsiche Post | Düsseldorf<br>Head: Phil Ninh").openPopup();
-*/
-
 //var popup = L.popup();
 // load json-file  
     $(document).ready(function () {
@@ -60,32 +35,12 @@ function myFunction() {
 
     function setHeader(xhr) {
         xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-        // xhr.setRequestHeader("acept","application/json");
-        // xhr.setRequestHeader("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
     }
-
-    /*$.ajax({
-
-        url: 'https://www.googleapis.com/moderator/v1/series?key='+key,
-        data: myData,
-        type: 'GET',
-        crossDomain: true,
-        dataType: 'jsonp',
-        success: function() { alert("Success"); },
-        error: function() { alert('Failed!'); },
-        beforeSend: setHeader
-    });*/
 
     function processData(allText) {
 
         for (var i in allText) {
             data = allText[i];
-            // var customicon = L.icon({
-            //     // the iconUrl is now the ith element in data.icon
-            //     iconUrl: data.icon,
-            //     iconSize: [52, 60], // size of the icon
-            //     iconAnchor: [26, 60], // point of the icon which will correspond to marker's location
-            //     popupAnchor: [0, -60] // point of the icon where the popup window will open
             var customicon = L.AwesomeMarkers.icon({
                     icon: 'bell',
                     prefix: 'glyphicon',
@@ -93,11 +48,6 @@ function myFunction() {
             }
             );
             if (data.userId === 3) {
-                // customicon = L.icon({
-                //     iconUrl: data.icon,
-                //     iconSize: [60, 52],
-                //     iconAnchor: [60, 26],
-                //     popupAnchor: [-35, -26]
                     customicon = L.AwesomeMarkers.icon({
                         icon: 'bell',
                         prefix: 'glyphicon',
@@ -107,11 +57,6 @@ function myFunction() {
             }
             ;
             if (data.userId === 1) {
-                // customicon = L.icon({
-                //     iconUrl: data.icon,
-                //     iconSize: [60, 52],
-                //     iconAnchor: [60, 26],
-                //     popupAnchor: [-35, -26]
                     customicon = L.AwesomeMarkers.icon({
                             icon: 'star',
                             prefix: 'glyphicon',
@@ -121,11 +66,6 @@ function myFunction() {
             }
             ;
             if (data.userId === 2) {
-                    // customicon = L.icon({
-                    //     iconUrl: data.icon,
-                    //     iconSize: [60, 52],
-                    //     iconAnchor: [0, 26],
-                    //     popupAnchor: [35, -26]
                     customicon = L.AwesomeMarkers.icon({
                         icon: 'cloud',
                         prefix: 'glyphicon',
@@ -135,22 +75,25 @@ function myFunction() {
             }
             ;
 
-            var sdt = data.dateTime;
+            var sdt = data.dateTime;//"2012-06-22T00:05:00"; //ie and safari does not support teh date format with "-"
             var dt = new Date(sdt);
             var h = dt.getHours() + ":" + dt.getMinutes();
+
+            var date = dateWS.split("T")[0].split("-");
+            var time = dateWS.split("T")[1].split(":");
+
+            var dateObj = new Date(date[0],date[1],date[2],time[0],time[1],time[2]);
+            var h2 = dateObj.getHours() + ":" + dateObj.getMinutes();
+
+
             // add the marker to the map
             L.marker([data.latitude, data.longitude], {icon: customicon}
-            // L.marker([data.latitude, data.longitude], {icon: L.AwesomeMarkers.icon({
-            //         icon: 'bell',
-            //         prefix: 'glyphicon',
-            //         markerColor: 'red'})
-            // }
             ).addTo(map)
 
                 .bindPopup("<strong style='color: #84b819'> Usuario: " + data.userId + "</strong>" +
                     "<br>Dispositivo: " + data.deviceId + " | Temperatura: " + data.temperature + "" +
                     "<br>Humedad: " + data.humidity + " | Viento: " + data.windSpeed + "" +
-                    "<br>Temperatura Sensor: " + data.sensorTemperature + " | Hora: " + h + "" +
+                    "<br>Temperatura Sensor: " + data.sensorTemperature + " | Hora: " + h2 + "" +
                     "<br>Icono: " + customicon.icon)
 
 // close the loop, the function processData(allText) and myFunction()
