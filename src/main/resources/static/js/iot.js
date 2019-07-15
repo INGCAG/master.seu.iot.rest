@@ -82,7 +82,7 @@ function myFunction() {
             var date = sdt.split("T")[0].split("-");
             var time = sdt.split("T")[1].split(":");
 
-            var dateObj = new Date(date[0],date[1],date[2],time[0],time[1],time[2]);
+            var dateObj = new Date(date[0],date[1],date[2],time[0],time[1]);
             var h2 = dateObj.getHours() + ":" + dateObj.getMinutes();
 
 
