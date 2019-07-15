@@ -76,14 +76,10 @@ function myFunction() {
             ;
 
             var sdt = data.dateTime;//"2012-06-22T00:05:00"; //ie and safari does not support teh date format with "-"
-            var dt = new Date(sdt);
-            var h = dt.getHours() + ":" + dt.getMinutes();
-
             var date = sdt.split("T")[0].split("-");
             var time = sdt.split("T")[1].split(":");
-
             var dateObj = new Date(date[0],date[1],date[2],time[0],time[1]);
-            var h2 = dateObj.getHours() + ":" + dateObj.getMinutes();
+            var h = dateObj.getHours() + ":" + dateObj.getMinutes();
 
 
             // add the marker to the map
@@ -93,8 +89,7 @@ function myFunction() {
                 .bindPopup("<strong style='color: #84b819'> Usuario: " + data.userId + "</strong>" +
                     "<br>Dispositivo: " + data.deviceId + " | Temperatura: " + data.temperature + "" +
                     "<br>Humedad: " + data.humidity + " | Viento: " + data.windSpeed + "" +
-                    "<br>Temperatura Sensor: " + data.sensorTemperature + " | Hora: " + h2 + "" +
-                    "<br>Icono: " + customicon.icon)
+                    "<br>Temperatura Sensor: " + data.sensorTemperature + " | Hora: " + h)
 
 // close the loop, the function processData(allText) and myFunction()
         }
